@@ -1,22 +1,29 @@
 import java.util.Scanner;
+
 public class CalculatorMain {
     public static Scanner in;
     private static int guestAge;
-    private static int rate;
+    private static float rate;
+    private  static float discount;
 
-    public static void Main(String args[]){
+    public static void main(String args[]){
         in = new Scanner(System.in);
-        calculate();
+        getInfo();
     }
-    private static void calculate(){
+    private static void getInfo(){
         int guestAge;
-        int rate;
+        float rate;
+        float discount;
         System.out.println("Enter Age:");
         guestAge = in.nextInt();
         System.out.println("Enter Rate:");
-        rate = in.nextInt();
-        if (guestAge >= 65){
+        rate = in.nextFloat();
+        System.out.println("Enter Discount Percentage (10% = .10) :");
+        discount = in.nextFloat();
 
-        }
+        if(guestAge >= 65){
+            rate = rate*discount;
+            }
+        System.out.println("Total Is: " + rate);
     }
 }
